@@ -1,13 +1,11 @@
 import React from "react";
 import InsectQueryOption from "./InsectQueryOption";
 
-// const InsectHeader = ({ search, setSearch, setSortBy, setContinent }) => {
-const InsectHeader = ({ searchByCrop, setSearchByCrop }) => {
+const InsectHeader = ({ searchByCrop, setSearchByCrop, setContinent, setSortBy }) => {
 
     return (
         <div>
-            {/* <InsectQueryOption search={search} setSearch={setSearch} setSortBy={setSortBy} setContinent={setContinent}/> */}
-            <InsectQueryOption searchByCrop={searchByCrop} setSearchByCrop={setSearchByCrop} />
+            <InsectQueryOption searchByCrop={searchByCrop} setSearchByCrop={setSearchByCrop} setContinent={setContinent} setSortBy={setSortBy} />
         </div>
     )
 }

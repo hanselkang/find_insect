@@ -5,20 +5,18 @@ import InsectList from '../components/InsectList';
 const InsectsContainer = () => {
 
     const [insectsData, setInsectsData] = useState([])
-    // const [refinedInsects, setRefinedInsects] = useState(null)
-
     const [searchByCrop, setSearchByCrop] = useState('')
     const [refinedInsects, setRefinedInsects] = useState([])
-    // const [sortBy, setSortBy] = useState('')
-    // const [continent, setContinent] = useState('')
+    const [continent, setContinent] = useState('')
+    const [sortBy, setSortBy] = useState('')
 
 
     
     useEffect(() => {
         onChangeSearchByCrop()
     }, [searchByCrop])
-    // useEffect(() => {onChangeSortBy(sortBy)}, [sortBy])
-    // useEffect(() => {continentChange(continent)}, [continent])
+    useEffect(() => {onChangeSortBy(sortBy)}, [sortBy])
+    useEffect(() => {continentChange(continent)}, [continent])
     useEffect(() => { getInsectData() }, [])
 
 
@@ -27,7 +25,6 @@ const InsectsContainer = () => {
         const launchData = await launchResponse.json()
         setInsectsData(launchData)
     }
-
 
 
     const onChangeSearchByCrop = () => {
@@ -40,46 +37,44 @@ const InsectsContainer = () => {
         const resultSearch = insectMap.map(value => 
             value)
         setRefinedInsects(resultSearch)
-
         }
-        
-
         
     }
 
-    // value.data.crops
-    // }
-    // crop.preventDefault()
-    // InsectList.foreEach((crop)=>{
-    // })
-    // setSearch(crop.target.value)
-    // }
 
-    // const onChangeSortBy = (sortBy) => {
-    //     if (sortBy === 'Alphabetical') {
-    //         const sortByInsects = [...refinedInsects]
-    //         const result = sortByInsects.sort((a,b) => a.title.localeCompare(b.title))
-    //         return setRefinedInsects(result)
-    //     }
-    // }
+    const continentChange = (chooseContinent) => {
+        if (continent === '') {
+            setRefinedInsects([])
+            return
+        }
+        const insectContinent = insectsData.results?.map((value) => value).filter((item) => 
+            item.data.continent.includes(chooseContinent))
+        
+        const resultSearch = insectContinent.map(value => value)
+        setRefinedInsects(resultSearch)
+    }
 
-    // const continentChange = (continent) => {
-    //     const insectsByContinent = [...insects]
-    //     if (continent === '') {
-    //         setRefinedInsects(continent)
-    //         return
-    //     }
-    //     const result = insectsByContinent.filter((insect) => {
-    //         return insect.contient.toLowerCase() === continent.toLowerCase()
-    //     })
-    //     result.length !== 0 ? setRefinedInsects(result)
-    //     :setRefinedInsects([])
-    // }
 
+    const onChangeSortBy = (sortBy) => {
+        if (sortBy === 'Alphabetical') {
+            const sortByInsects = [...refinedInsects]
+            console.log(sortByInsects)
+            const result = sortByInsects.sort((a,b) => a.data?.title.localeCompare(b.data?.title))
+            return setRefinedInsects(result)
+        }
+        if (sortBy === 'ID') {
+            const sortByInsects = [...refinedInsects]
+            console.log(sortByInsects)
+            const result = sortByInsects.sort((a,b) => parseFloat(a.ID) - parseFloat(b.ID))
+            return setRefinedInsects(result)
+        }
+    }
+
+   
     return (
         <div>
             {/* <InsectHeader search={search} setSearch={setSearch} setSortBy={setSortBy} setContinent={setContinent} onChangeSortBy={onChangeSortBy}/> */}
-            <InsectHeader searchByCrop={searchByCrop} setSearchByCrop={setSearchByCrop} />
+            <InsectHeader searchByCrop={searchByCrop} setSearchByCrop={setSearchByCrop} setContinent={setContinent} setSortBy={setSortBy}/>
             <InsectList insectsData={insectsData} searchByCrop={searchByCrop}  refinedInsects={refinedInsects}/>
         </div>
     )
