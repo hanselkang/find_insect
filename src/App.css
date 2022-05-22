@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: white;
 }
 
 .App-logo {
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .App-link {
@@ -32,7 +34,123 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+#insects_list {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#header,
+#header_text {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  margin: 4px;
+  height: 40px;
+  border: 2px solid white;
+  background: transparent;
+  color: grey;
+  font-weight: bold;
+  font-size: 1em;
+  text-shadow: floralwhite 0px 0 4px;
+  ;
+}
+
+#header_text {
+  width: 192px
+}
+
+#table_menu {
+  text-align: right;
+  color: grey;
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 100px;
+  padding-left: 100px;
+  text-shadow: floralwhite 0px 0 5px;
+  width: 33%;
+
+}
+
+#table_right {
+  text-align: right;
+  width: 25%
+}
+#searched_item{
+  cursor: pointer;
+}
+
+#details_detail{
+  overflow-y: scroll;
+  width: 80%;
+  text-align: left;
+  padding: 20px;
+  padding-left: 60px;
+  max-height: 500px;
+}
+
+#detail_table {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+#detail {
+  position: relative;
+  top: -300px;
+  float: right;
+  display: inline;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  margin-right: 50px;
+  margin-left: 50px;
+  background-color: rgba(46, 46, 46, 0.3);
+  border-radius: 10px;
+  /* border: solid 1px; */
+}
+
+#datalist {
+  width: 40%;
+  padding-left: 20px;
+}
+
+#list {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 20px;
+  font-size: 0.9em;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255, 253, 253, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+}
+
+#new_frame {
+  overflow-y: scroll;
+  max-height: 600px;
+  border: solid 1px rgba(255, 255, 255, 0.25);
+}
+
+#table_disease {
+  padding: 2px;
+  text-align: left;
+}
+
+#explain {
+  overflow-y: scroll;
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }

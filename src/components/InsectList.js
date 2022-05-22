@@ -2,24 +2,39 @@ import React from "react";
 import InsectItem from "./InsectItem";
 import InsectSearchItem from "./InsectSearchItem";
 
-const InsectList = ({ insectsData, index, refinedInsects, }) => {
+const InsectList = ({ setSortBy, insectsData, index, refinedInsects, onInsectClick, onSearchItemClick }) => {
 
     const insectNodes = insectsData.results?.map((insect, index) => {
-        return <InsectItem insect={insect} key={index} />
+        return <InsectItem insect={insect} key={index} onInsectClick={onInsectClick
+        } />
     })
 
-    const refinedInsectNodes = refinedInsects === null ? '' : refinedInsects.map((insect, index) => {   return <InsectSearchItem insect={insect} key={index} />})
+    const refinedInsectNodes = refinedInsects === null ? '' : refinedInsects.map((insect, index) => {
+        return <InsectSearchItem insect={insect} key={index} onSearchItemClick={onSearchItemClick
+        } setSortBy={setSortBy}
+        />
+    })
+
+
 
 
     return (
-        <div key={index}>
-            <div>
+        <div key={index} id="datalist">
+            <h1>Find Insects</h1>
+            <div id="new_frame">
                 {refinedInsectNodes}
             </div>
-            <details>
-                <summary>Insect List</summary>
-                <div> {insectNodes} </div>
-            </details>
+            <hr />
+            <div id="new_frame">
+                <br />
+                <details>
+                    <summary>Insect List ( Total number of insects in this database: {insectsData.count})</summary>
+                    <br />
+                    <div id="insects_list"> {insectNodes} </div>
+                </details>
+                <br />
+                <hr />
+            </div>
         </div>
     )
 }
