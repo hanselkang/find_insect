@@ -9,25 +9,25 @@ const InsectDetail = ({ selectedInsect, index }) => {
 
     const img = selectedInsect.data.image.url !== "" ? <img src={selectedInsect.data.image.url} width="300px" /> : <img src={noImage} width="300px" />
 
-    const distribution = selectedInsect.data.destribution ? selectedInsect.data.destribution : notInDatabase
+    const distribution = selectedInsect.data.distribution ? selectedInsect.data.distribution : notInDatabase
 
     const continent = selectedInsect.data.continent[0] !== null ? selectedInsect.data.continent.map((item) => {
         return (
-            <>{item} </>
+            <li id="table_list" >{item} </li>
         )
     }) : notInDatabase
 
-    const ukStatus = selectedInsect.data.ukstatus ? selectedInsect.data.destribution : notInDatabase
+    const ukStatus = selectedInsect.data.ukstatus ? selectedInsect.data.ukstatus : notInDatabase
 
     const crops = selectedInsect.data.crops[0] !== null ? selectedInsect.data.crops.map((item) => {
         return (
-            <>{item} </>
+            <li id="table_list" >{item} </li>
         )
     }) : notInDatabase
 
     const diseases =
         selectedInsect.data.diseases ? Object.values(selectedInsect.data.diseases).map((value) => {
-            return (<li id="table_disease" >{value} </li>)
+            return (<li id="table_list" >{value} </li>)
         }) : notInDatabase
 
 
@@ -86,7 +86,7 @@ const InsectDetail = ({ selectedInsect, index }) => {
                 <tbody>
                     <tr>
                         <td>
-                        <br />
+                            <br />
                             <details id="explain">
                                 <summary>Ecology</summary>
                                 <br />
