@@ -34,7 +34,7 @@ const InsectsContainer = () => {
 
     const onChangeSearchByTitle = () => {
         if (searchByTitle !== '') {
-            const insectMap = insectsData.results?.map((value) => value).filter((item) =>
+            const insectMap = insectsData.results.map((value) => value).filter((item) =>
                 item.data.title.toLowerCase().includes(searchByTitle.toLowerCase()))
             const resultSearch = insectMap.map(value =>
                 value)
@@ -43,7 +43,7 @@ const InsectsContainer = () => {
     }
 
     const onInsectClick = (insect) => {
-        setSearchByTitle(insect?.data.title)
+        setSearchByTitle(insect.data.title)
     }
 
     const onSearchItemClick = (insect) => {
@@ -118,10 +118,15 @@ const InsectsContainer = () => {
 
 
     return (
-        <div>
+        <div id="main">
             <InsectHeader searchByCrop={searchByCrop} setSearchByCrop={setSearchByCrop} searchByCountry={searchByCountry} setSearchByCountry={setSearchByCountry} setContinent={setContinent} setSortBy={setSortBy} setSearchByUKStatus={setSearchByUKStatus} searchByTitle={searchByTitle} setSearchByTitle={setSearchByTitle} />
             {selectedInsect ? <InsectDetail selectedInsect={selectedInsect} /> : null}
             <InsectList setSortBy={setSortBy} insectsData={insectsData} searchByCrop={searchByCrop} refinedInsects={refinedInsects} onInsectClick={onInsectClick} onSearchItemClick={onSearchItemClick} />
+            
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     )
 

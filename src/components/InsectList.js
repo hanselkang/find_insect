@@ -33,8 +33,8 @@ const InsectList = ({ setSortBy, insectsData, index, refinedInsects, onInsectCli
                     <div id="insects_list"> {insectNodes} </div>
                 </details>
                 <br />
-                <hr />
             </div>
+            <hr />
         </div>
     )
 }
