@@ -33,15 +33,26 @@
   
 ----------
 
+<div align="center">
   
-![screengif 1](https://user-images.githubusercontent.com/43307207/170098848-4b65bb75-1f3e-4e46-9cf5-508b53e10426.gif)
+![Screen Recording 2022-05-24 at 22 57 20](https://user-images.githubusercontent.com/43307207/170140880-4d19aeb2-ff85-44ad-89ff-434b645f6393.gif) 
+  
+<br>
+  
+![Screen Recording 2022-05-24 at 22 59 57](https://user-images.githubusercontent.com/43307207/170140905-678f8497-571e-4273-a92a-1c8d72f7ee6a.gif)
 
 <br>
+
+![Screen Recording 2022-05-24 at 23 01 04](https://user-images.githubusercontent.com/43307207/170140916-dc5d0200-75eb-4520-942d-c3ba5a91775e.gif) 
+  
 <br>
+  
+![Screen Recording 2022-05-24 at 23 01 53](https://user-images.githubusercontent.com/43307207/170140920-dc502387-d7ca-4152-a50d-55276e5367a5.gif)
 
-![screengif 2](https://user-images.githubusercontent.com/43307207/170098890-8d4d736f-512c-44c8-ad53-b9bca1ee9bab.gif)
 
-Demo
+###Demo
+  
+</div>
 
 <br>
 
