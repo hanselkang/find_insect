@@ -15,7 +15,7 @@
   - Continents
 * Search Insects By Name 
 * View selected insect detail
-* Sort Insects b
+* Sort Insects by
   - Title
   - ID
 
